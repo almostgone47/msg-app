@@ -1,0 +1,26 @@
+<div class="ui large inverted menu">
+  <div class="ui container">
+    <a class="active item">
+      ChatRoom
+    </a>
+    <a class="item">
+      Messages
+    </a>
+    <div class="right menu">
+      <div class="ui dropdown item">
+        Account <i class="dropdown icon"></i>
+        <div class="menu">
+          <% unless current_user.nil? %>
+            <a class="item">LogOut</a>
+          <% else %>
+            <a class="item">LogIn</a>
+            <a class="item">SignUp</a>
+          <% end %>
+        </div>
+      </div>
+      <div class="item">
+          <div class="ui primary button">Sign Up</div>
+      </div>
+    </div>
+  </div>
+</div>
