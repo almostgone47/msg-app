@@ -1,0 +1,13 @@
+<div class="event">
+  <div class="content">
+    <div class="summary">
+      
+        <em><%= chat.user.name %></em>: <%= chat.body %>
+        
+        <%= link_to 'Edit', edit_chat_path(chat) %>
+        <%= link_to 'Delete', chat, method: :delete, data: { confirm: 'delete?' } %>
+        <br>
+      
+    </div>
+  </div>
+</div>

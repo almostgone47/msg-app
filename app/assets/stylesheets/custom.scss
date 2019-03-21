@@ -1,1 +1,30 @@
 @import "semantic-ui";
+
+body{
+  margin: 0 !important; 
+}
+
+.chatbox{
+  height: 400px;
+}
+
+#chats{
+  height: 15em;
+  overflow: auto;
+}
+
+#side-menu{
+  width: auto;
+}
+
+#nav-bar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-bottom: 50px;
+  z-index: 1;
+}
+
+#notice{
+  margin-top: 100px;
+}

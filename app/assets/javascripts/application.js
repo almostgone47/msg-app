@@ -17,6 +17,23 @@
 //= require semantic-ui
 //= require_tree .
 
+scroll_bottom = () => {
+  if ($('#chats').length > 0) {
+    $('#chats').scrollTop($('#chats')[0].scrollHeight);
+  };
+};
+
+submit_body = () => {
+  $('#chat_body').on('keydown', function(e) {
+    if (e.keyCode == 13) {
+      $('button').click();
+      e.target.value = "";
+    };
+  });
+};
+
 $(document).on('turbolinks:load', function(){
   $('.ui.dropdown').dropdown();
+  submit_body();
+  scroll_bottom();
 });

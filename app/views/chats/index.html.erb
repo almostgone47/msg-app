@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="ui center aligned icon header">
+  <i class="circular users lightgreen icon"></i>
+  Lets Talk!
+</h2>
+
+<div class="ui inverted segment two column grid">
+  <div class="twelve wide column">
+    <div class="ui fluid raised card chatbox">
+      
+      <div id="chats" class="content">  
+          <h4 class="ui header">Friends Activity</h4>
+        <div id="chat-container" class="ui small feed">
+          <%= render @chats %>
+        </div>
+      </div>
+
+      <div class="extra content">
+        <%= form_for(@chat, html: {class: "ui reply form", role: "form"}, url: chats_path, remote: true) do |f| %>
+          <div class="ui inverted segment field">  
+            <div class="ui fluid icon input">
+              <%= f.text_field :body, placeholder: "Enter a message..." %>
+              <%= f.button '<i class="bordered inverted green edit icon"></i>'.html_safe %>
+            </div>
+          </div>  
+        <% end %>      
+      </div>
+
+    </div>
+  </div>
+  
+  
+  <div class="four wide column">
+    <div id="side-menu" class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui inverted vertical menu">
+          <a class="active item">
+            Home
+          </a>
+          <a class="item">
+            Messages
+          </a>
+          <a class="item">
+            Friends
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<%= link_to 'New Chat', new_chat_path %>
